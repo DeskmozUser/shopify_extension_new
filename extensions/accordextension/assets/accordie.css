@@ -1,0 +1,164 @@
+details.accordie-app {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    width: 35em;
+    max-width: calc(100% - 2rem);
+    position: relative;
+    border: 1px solid #78909C;
+    border-radius: 6px;
+    background-color: #ECEFF1;
+    color: #263238;
+    transition: background-color .15s;
+    
+    > :last-child {
+      margin-bottom: 1rem;
+    }
+    
+    &::before {
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: inherit;
+      opacity: .15;
+      box-shadow: 0 .25em .5em #263238;
+      pointer-events: none;
+      transition: opacity .2s;
+      z-index: -1;
+    }
+    
+    &[open] {
+      background-color: #FFF;
+      
+      &::before {
+        opacity: .6;
+      }
+    }
+  }
+  
+  details.accordie-app summary {
+    padding: 1rem 2em 1rem 0;
+    display: block;
+    position: relative;
+    font-size: 1.33em;
+    font-weight: bold;
+    cursor: pointer;
+    
+    &::before,
+    &::after {
+      width: .75em;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      content: '';
+      background-color: currentColor;
+      text-align: right;
+      transform: translateY(-50%);
+      transition: transform .2s ease-in-out;
+    }
+    
+    &::after {
+      transform: translateY(-50%) rotate(90deg);
+      
+      [open] & {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+  #button-container {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #button-container:hover {
+    background-color: #3e8e41;
+  }
+
+
+  .rewards-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+  }
+  
+  .rewards-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .rewards-card__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rewards-card__button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  cursor: pointer;
+  }
+  
+  .rewards-card__button:hover {
+    background-color: #0069d9;
+  }
+  
+  .rewards-card__description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  
+  .rewards-card__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .rewards-card__benefit {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .link-button {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.link-button:hover {
+    background-color: #f5f5f5;
+}

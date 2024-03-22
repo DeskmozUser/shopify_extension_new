@@ -1,0 +1,76 @@
+{{'accordie.css' | asset_url| stylesheet_tag }}
+<details class="accordie-app">
+    <summary>
+        {{ block.settings.title }}
+    </summary>
+    <p>
+        {{ block.settings.content }}
+    </p>
+</details>
+
+
+
+<div id="myDiv" >
+ 
+    <div class="rewards-card">
+
+        <div class="rewards-card__header">
+
+        {% if customer.has_account %}
+            <a href="/account/logout" class="link-button"> Logout</a>
+        {% else %}
+            <a href="/account/login" class="link-button"> Login</a>
+            <a href="/account/register" class="link-button"> Join Now</a>
+        {% endif %}
+            {% comment %} <h2 class="rewards-card__title">Rewards Rewards</h2>
+            <button class="rewards-card__button">Join Now</button> {% endcomment %}
+        </div>
+        <div class="rewards-card__content">
+            <p class="rewards-card__description">
+                Earn points for every purchase and get exclusive discounts.
+            </p>
+            <ul class="rewards-card__benefits">
+                <li class="rewards-card__benefit">Free shipping on orders over $50</li>
+                <li class="rewards-card__benefit">10% off your first purchase</li>
+                <li class="rewards-card__benefit">Earn 1 point for every $1 spent</li>
+                <li class="rewards-card__benefit">Redeem points for discounts</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<button id="button-container">
+
+    click here
+</button>
+<br>
+
+
+
+
+
+
+{% schema %}
+{
+"name": "Accordian",
+"target":"section",
+"javascript":"test.js",
+
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "hello world"
+},
+{
+"type": "richtext",
+"id": "content",
+"label": "Content",
+"default": "<p>Describe here your accordian</p>"
+}
+]
+}
+{% endschema %}
